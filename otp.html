@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jio Selfcare - Get SIM</title>
+  <style>
+    /* CSS Styles for the header */
+    header {
+                display: flex;
+                align-items: center;
+                padding: 10px;
+                background-color: #70136e;
+            }
+    
+            header img {
+                width: 50px;
+                height: 50px;
+                margin-right: 10px;
+            }
+     
+            .options {
+                margin-left: auto;
+                display: flex;
+                gap: 90px;
+            }
+    
+            .options a {
+                margin: 0;
+                color: #fff; /* Added white color to options */
+            }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('simbackgroung.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Center the box */
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* Box Styles */
+    .get-sim-box {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .get-sim-title {
+      font-size: 32px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .get-sim-content {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    /* Form Styles */
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 10px;
+    }
+
+    input {
+      padding: 8px;
+      margin-bottom: 15px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <img src="logo.jpg" alt="Logo">
+        <div class="options">
+            <a href="home.html">Home</a>
+            <a href="prepaid.html">Prepaid</a>
+            <a href="postpaid.html">Postpaid</a>
+            <a href="getsim.html">Get SIM</a>
+        </div>
+         
+    </header>
+    <div class="container">
+        <h2>Enter OTP</h2>
+        <form id="otpForm">
+          <div class="input-field">
+            <input class="otp-input" type="text" maxlength="1" onkeyup="moveToNextInput(event, 1)" autofocus />
+            <input class="otp-input" type="text" maxlength="1" onkeyup="moveToNextInput(event, 2)" />
+            <input class="otp-input" type="text" maxlength="1" onkeyup="moveToNextInput(event, 3)" />
+            <input class="otp-input" type="text" maxlength="1" onkeyup="moveToNextInput(event, 4)" />
+          </div>
+          <button class="submit-button" type="submit">Verify</button>
+        </form>
+      </div>
+    
+      <script>
+        // JavaScript code
+        function moveToNextInput(event, index) {
+          const inputLength = event.target.value.length;
+          const maxLength = event.target.getAttribute('maxlength');
+          
+          if (inputLength >= maxLength) {
+            const nextInput = document.querySelector(`.otp-input:nth-child(${index + 1})`);
+            
+            if (nextInput) {
+              nextInput.focus();
+            } else {
+              document.getElementById('otpForm').submit();
+            }
+          }
+        }
+        
+        document.getElementById('otpForm').addEventListener('submit', function(event) {
+          event.preventDefault();
+          const otp = Array.from(document.getElementsByClassName('otp-input'))
+            .map(input => input.value)
+            .join('');
+          
+          alert(`Entered OTP: ${otp}`);
+          // Redirect user to the desired page or perform further actions
+          // For example: window.location.href = "https://example.com/dashboard";
+        });
+      </script>
+    </body>
+    </html>

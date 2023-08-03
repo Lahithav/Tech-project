@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Get SIM</title>
+  <style>
+    /* CSS styles */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+    
+    
+    .get-sim-box {
+        width: 300px;
+        height: 300px; /* Adjust the height as desired */
+        padding: 20px;
+        border: 1px solid #0b0a0a;
+        border-radius: 4px;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    
+    .get-sim-title {
+      font-size: 40px;
+      font-weight: bold;
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    
+    .get-sim-content {
+      font-size: 20px;
+      color: #555;
+      line-height: 1.5;
+    }
+    
+    .input-field {
+      margin-bottom: 20px;
+    }
+    
+    .phone-input {
+      width: 300px;
+      height: 40px;
+      padding: 5px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    
+    .continue-button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="get-sim-box">
+    <div class="get-sim-title">Recharge</div>
+    <div class="get-sim-content">
+      <p>Enter your phone number to recharge.</p>
+    </div>
+    <div class="input-field">
+      <label for="phoneNumber">Enter phone number:</label>
+      <input id="phoneNumber" class="phone-input" type="text" />
+    </div>
+    <button class="continue-button" onclick="continueGetSim()">Continue</button>
+  </div>
+
+  <script>
+    // JavaScript code
+    function continueGetSim() {
+      const phoneNumber = document.getElementById('phoneNumber').value;
+      alert(`Phone Number: ${phoneNumber}`);
+      // Add your code to proceed with the SIM card request process
+      window.location.href = 'payment.html'; // Redirect to the payment.html page
+    }
+  </script>
+</body>
+</html>

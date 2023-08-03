@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+     
+    <style>
+        body {
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column; /* Added for the header */
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url("simbackgroung.jpg"); /* Replace with the path to your image */
+            background-size: cover;
+            background-position: center;
+        }
+
+        header {
+            width: 100%;
+            padding: 10px;
+            text-align: left;
+            background-color: rgb(21, 17, 21);
+        }
+
+        header img {
+            height: 60px; /* Adjust the height as needed */
+        }
+
+        .container {
+            max-width: 500px;
+            margin-top: 50px;
+            padding: 20px;
+        }
+
+        .box {
+            background-color:rgb(132, 74, 148);
+            border: 1px solid #101011;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+            width: 400px; /* Adjust the width as needed */
+            height: 400px; /* Adjust the height as needed */
+            margin: 0 auto; /* Add this line to center horizontally */
+            box-sizing: border-box;
+        }
+
+        h1 {
+            margin-top: 0;
+            margin-bottom: 50px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            display: block;
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .forgot-password {
+            margin-top: 20px;
+            text-align: right;
+        }
+
+        .forgot-password a {
+            color: #0e100e;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+        .back {
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .back a {
+            color:rgb(16, 14, 14);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back a:hover {
+            text-decoration: underline;
+        }
+
+        button[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 40px; /* Adjusted from 100px */
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+     
+
+    <header>
+        <img src="logo.jpg" alt="Logo">
+    </header>
+    <div class="container">
+        <div class="box">
+            <h1>Login</h1>
+            <form id="loginForm">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit" id="loginButton"><a href="menu.html">Login</a></button>
+            </form>
+            <p class="forgot-password"><a href="reset.html">Forgot Password?</a></p>
+            <p class="back"><a href="home.html">Home page</a></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Add your logic for handling form submission and authentication here
+            // Example code for demonstration purposes:
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            
+            // Authentication logic...
+        });
+    </script>
+</body>
+</html>
